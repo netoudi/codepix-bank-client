@@ -3,5 +3,37 @@
     "next/core-web-vitals",
     "eslint:recommended",
     "plugin:prettier/recommended"
-  ]
+  ],
+  "plugins": [
+    "eslint-plugin-import-helpers"
+  ],
+  "rules": {
+    "import-helpers/order-imports": [
+      "warn",
+      {
+        "newlinesBetween": "always",
+        "groups": [
+          "/^react/",
+          "/^next/",
+          "module",
+          "/^context/",
+          "/^components/",
+          "/^hof/",
+          "/^hooks/",
+          "/^pages/",
+          "/^utils/",
+          "/^styles/",
+          [
+            "parent",
+            "sibling",
+            "index"
+          ]
+        ],
+        "alphabetize": {
+          "order": "asc",
+          "ignoreCase": true
+        }
+      }
+    ]
+  }
 }
